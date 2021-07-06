@@ -7,7 +7,10 @@ const Home = ({ navigation }) => {
     return (
         <>
             <View>
-                <Text>Home !!</Text>
+                <Text>Carroussel</Text>
+            </View>
+            <View>
+                <Text>Categoria + produtos</Text>
             </View>
         </>
     )
