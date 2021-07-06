@@ -1,17 +1,14 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Button } from 'react-native';
+import Cadastro from '../Cadastro'
 
 const Home = ({ navigation }) => {
 
     return (
         <>
-        <View>
-            <TouchableOpacity style={{height: 50, width: 50}} 
-            name='Cadastro' onPress={Cadastro} />
-        </View>
-        <View>
-            <Text>Home !!</Text>
-        </View>
+            <View>
+                <Text>Home !!</Text>
+            </View>
         </>
     )
 }
