@@ -5,15 +5,13 @@ import Home from '../../pages/Home'
 import Perfil from '../../pages/Perfil'
 import DrawerCarrinho from '../DrawerCarrinho';
 import { DrawerActions } from 'react-navigation';
-
-
-
-  
+import Cadastro from '../../pages/Cadastro';
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = ({ navigation }) => {
     return (
         <Tab.Navigator initialRouteName="Home">
+            <Tab.Screen name='Cadastro' component={Cadastro} />
             {/*
             <Tab.Screen name='Carrinho' component={DrawerCarrinho} listeners={({navigation}) => ({
                 tabPress: e => {
