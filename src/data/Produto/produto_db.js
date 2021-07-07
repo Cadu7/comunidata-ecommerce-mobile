@@ -40,6 +40,13 @@ let adicionarProdutos = (nomeProduto, descricaoProduto, precoProduto) => {
     
 }
 
+let deletarProduto = (idProduto) => {
+    let savedItens = listarProdutos();
+    realm_produto.write(()=>{
+        realm_produto.delete(realm.objectForPrimaryKey("Produto", idProduto));
+    })
+}
+
 export {
-    listarProdutos, adicionarProdutos
+    listarProdutos, adicionarProdutos, deletarProduto
 }

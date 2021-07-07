@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, TextInput, TouchableOpacity, Image } from 'react-native'
-import { adicionarProdutos } from '../../data/Produto/produto_db'
+import { adicionarProdutos } from '../../../data/Produto/produto_db'
 
 const Cadastro = () => {
     const [nome, setNome] = useState(null);
