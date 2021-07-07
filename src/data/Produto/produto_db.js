@@ -26,7 +26,7 @@ let adicionarProdutos = (nomeProduto, descricaoProduto, precoProduto) => {
     
     const ultimoId = realm_produto.objects('Produto').sorted('produto_id', true)[0];
     const maiorId = ultimoId == null ? 1 : ultimoId.produto_id;
-    const proximoId = maiorId != 1 ? maiorId + 1 : maiorId; 
+    const proximoId = maiorId != 1 ? maiorId : maiorId + 1; 
 
     realm_produto.write(() => {
         const prod = realm_produto.create('Produto', {
