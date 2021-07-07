@@ -6,9 +6,6 @@ import Perfil from '../../pages/Perfil'
 import DrawerCarrinho from '../DrawerCarrinho';
 import Cadastro from '../../pages/Cadastro'
 
-
-
-
 const Tab = createBottomTabNavigator();
 const TabNavigator = ({ navigation }) => {
     return (
@@ -37,5 +34,7 @@ const TabNavigator = ({ navigation }) => {
         </Tab.Navigator>
     )
 }
+
+
 
 export default TabNavigator;
