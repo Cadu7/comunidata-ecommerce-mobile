@@ -7,8 +7,6 @@ const Cadastro = () => {
     const [descricao, setDescricao] = useState();
     const [preco, setPreco] = useState();
 
-
-
     return (
         <View>
             <View style={{ padding: 10 }}>
