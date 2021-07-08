@@ -32,7 +32,6 @@ const Home = ({ navigation }) => {
                 } */}
                 <FlatList
                     data={produtos}
-                    extraData={setProdutos(listarProdutos())}
                     onRefresh={()=>{setProdutos(listarProdutos)}}
                     refreshing={false}
                     keyExtractor={(item, index) => index.toString()}
