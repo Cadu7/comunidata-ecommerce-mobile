@@ -1,25 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Button, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, Button, FlatList, ScrollView} from 'react-native';
 import styles from './styles'
 import { listarProdutos } from '../../data/Produto/produto_db';
+import DrawerCarrinho from '../../components/DrawerCarrinho'
+import CardProduto from '../../components/CardProdutos'
 
 
 const Home = ({ navigation }) => {
 
     const [produtos, setProdutos] = useState(listarProdutos());
 
+
     useEffect(() => {
-        setProdutos(...listarProdutos());
-    }, [produtos])
+        setProdutos(produtos)
+    }, [])
 
     return (
-        <>
+        <View>
             <View>
                 <Text>Carroussel</Text>
             </View>
             <View>
+                {/* {
+                    produtos.map(produto => {
+                        return (
+                            <View>
+                                <CardProduto item={produto} key={produto.produto_id} />
+                            </View>
+                        )
+                    })
+                } */}
                 <FlatList
                     data={produtos}
+                    extraData={setProdutos(listarProdutos())}
+                    onRefresh={()=>{setProdutos(listarProdutos)}}
+                    refreshing={false}
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={({ item, index }) => {
                         return (
@@ -34,7 +49,7 @@ const Home = ({ navigation }) => {
                     }
                 />
             </View>
-        </>
+        </View>
     )
 }
 export default Home;
