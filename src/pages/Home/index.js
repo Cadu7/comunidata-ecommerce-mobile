@@ -20,6 +20,7 @@ const Home = ({ navigation }) => {
         <View>
             <View>
                 <Text>Carroussel</Text>
+                <Text style={{fontSize: 18, textAlign: 'center', marginTop: 10 }}>Retorno Página Produto</Text>
             </View>
             <View>
                 {/* {
