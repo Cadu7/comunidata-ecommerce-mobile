@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { View, TextInput, TouchableOpacity, Image } from 'react-native'
-import { deletarProduto } from '../../../data/Produto/produto_db'
+import { deletarProduto, listarProdutos } from '../../../data/Produto/produto_db'
 
 
 const Deletar = () => {
     const [id, setId] = useState(null);
-    const apagarProduto = () => {
-        deletarProduto (id)
 
+    const apagarProduto = () => {
+        produtos = listarProdutos();
+        deletarProduto(produtos[id-1]);
     }
     
     return (
@@ -17,7 +18,7 @@ const Deletar = () => {
             keyboardType = 'numeric'
             name = "idProduto"
             placeholder = "id do Produto"
-            onChangeText = {id => setId(id)}
+            onChangeText = {id => setId(parseInt(id))}
             value = {id}
             
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Button, FlatList } from 'react-native';
 import styles from './styles'
 import { listarProdutos } from '../../data/Produto/produto_db';
@@ -7,6 +7,11 @@ import { listarProdutos } from '../../data/Produto/produto_db';
 const Home = ({ navigation }) => {
 
     const [produtos, setProdutos] = useState(listarProdutos());
+
+    useEffect(() => {
+        setProdutos(...listarProdutos());
+    }, [produtos])
+
     return (
         <>
             <View>
