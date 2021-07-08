@@ -8,11 +8,12 @@ import CardProduto from '../../components/CardProdutos'
 
 const Home = ({ navigation }) => {
 
-    const [produtos, setProdutos] = useState(listarProdutos());
-
+    const [produtos, setProdutos] = useState([]);
 
     useEffect(() => {
-        setProdutos(produtos)
+        const refresh = navigation.addListener('focus', () => {
+            setProdutos(listarProdutos())
+        })
     }, [])
 
     return (

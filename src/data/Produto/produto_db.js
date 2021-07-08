@@ -38,17 +38,31 @@ let adicionarProdutos = (nomeProduto, descricaoProduto, precoProduto) => {
             produto_preco: precoProduto,
         });
     });
-    console.log(realm_produto.objects('Produto2'));
-    
 }
 
-let deletarProduto = (produtoId) => {
+let buscarPorNome = (nome) => {
+    const produto = realm_produto.objects('Produto2')
+                                .filtered('produto_nome= $0', nome);
+    return produto;
+}
+
+let atualizarProduto = (nome, descricao, preco, id) => {
+    realm_produto.write(() => {
+        const prod = realm_produto.objectForPrimaryKey('Produto2', id);
+        prod.produto_nome = nome;
+        prod.produto_descricao = descricao;
+        prod.produto_preco = preco;
+    });
+}
+
+let deletarProduto = (id) => {
     let savedItens = listarProdutos();
     realm_produto.write(()=>{
-        realm_produto.delete(realm_produto.objectForPrimaryKey('Produto2', produtoId));
+        realm_produto.delete(realm_produto.objectForPrimaryKey('Produto2', id));
+        
     })
 }
 
 export {
-    listarProdutos, adicionarProdutos, deletarProduto
+    listarProdutos, adicionarProdutos, buscarPorNome, atualizarProduto, deletarProduto
 }

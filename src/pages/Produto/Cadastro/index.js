@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { View, TextInput, TouchableOpacity, Image } from 'react-native'
-import { adicionarProdutos } from '../../../data/Produto/produto_db'
+import { View, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { adicionarProdutos, atualizarProduto } from '../../../data/Produto/produto_db'
 import Deletar from '../Deletar'
+import Atualizar from '../Atualizar'
+import Buscar from '../Buscar'
+
 const Cadastro = () => {
     const [nome, setNome] = useState(null);
     const [descricao, setDescricao] = useState(null);
@@ -13,7 +16,7 @@ const Cadastro = () => {
     }
 
     return (
-        <View>
+        <ScrollView>
             <View style={{ padding: 10 }}>
                 <TextInput style={{ borderStyle: 'solid', borderWidth: 1 }}
                     name='nome'
@@ -32,13 +35,17 @@ const Cadastro = () => {
                     onChangeText={transferPreco => setPreco(parseFloat(transferPreco))}
                     value={preco} />
             </View>
-            <TouchableOpacity onPress={salvarProduto}>
-                <Image style={{ height: 50, width: 50 }}
-                    source={{ uri: 'https://th.bing.com/th/id/R.d9ffba932a78f5b38a4750f6704f2334?rik=1j1aOC5RDxXuRg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2ffree-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png&ehk=rIpQZlg8tb3NjbJGECZCmgLGrq%2bwOuiLS80Wpq6dshE%3d&risl=&pid=ImgRaw' }} />
+            <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity onPress={salvarProduto}>
+                    <Image style={{ height: 50, width: 50 }}
+                        source={{ uri: 'https://th.bing.com/th/id/R.d9ffba932a78f5b38a4750f6704f2334?rik=1j1aOC5RDxXuRg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2ffree-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png&ehk=rIpQZlg8tb3NjbJGECZCmgLGrq%2bwOuiLS80Wpq6dshE%3d&risl=&pid=ImgRaw' }} />
 
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </View>
             <Deletar />
-        </View>
+            <Atualizar />
+            <Buscar />
+        </ScrollView>
     )
 }
 
