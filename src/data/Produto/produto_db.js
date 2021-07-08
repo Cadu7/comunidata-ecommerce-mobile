@@ -42,11 +42,10 @@ let adicionarProdutos = (nomeProduto, descricaoProduto, precoProduto) => {
     
 }
 
-let deletarProduto = (prodDeletar) => {
+let deletarProduto = (produtoId) => {
     let savedItens = listarProdutos();
     realm_produto.write(()=>{
-        realm_produto.delete(prodDeletar);
-        prodDeletar = null;
+        realm_produto.delete(realm_produto.objectForPrimaryKey('Produto2', produtoId));
     })
 }
 

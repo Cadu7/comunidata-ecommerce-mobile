@@ -7,8 +7,7 @@ const Deletar = () => {
     const [id, setId] = useState(null);
 
     const apagarProduto = () => {
-        produtos = listarProdutos();
-        deletarProduto(produtos[id-1]);
+        deletarProduto(id);
     }
     
     return (
