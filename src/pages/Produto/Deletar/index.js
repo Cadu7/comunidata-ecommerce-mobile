@@ -12,7 +12,7 @@ const Deletar = () => {
 
     return (
         <View style={{ padding: 10 }}>
-            <Text style={{fontSize: 18, textAlign: 'center' }}>Deletar por ID</Text>
+            <Text style={{ fontSize: 18, textAlign: 'center' }}>Deletar por ID</Text>
             <TextInput
                 style={{ borderStyle: 'solid', borderWidth: 1, marginTop: 10 }}
                 keyboardType='numeric'

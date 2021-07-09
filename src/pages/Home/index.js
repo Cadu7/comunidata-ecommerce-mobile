@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Button, FlatList, ScrollView} from 'react-native';
+import { View, Text, TouchableOpacity, Button, FlatList, ScrollView } from 'react-native';
 import styles from './styles'
 import { listarProdutos } from '../../data/Produto/produto_db';
 import DrawerCarrinho from '../../components/DrawerCarrinho'
@@ -20,7 +20,7 @@ const Home = ({ navigation }) => {
         <View>
             <View>
                 <Text>Carroussel</Text>
-                <Text style={{fontSize: 18, textAlign: 'center', marginTop: 10 }}>Retorno Página Produto</Text>
+                <Text style={{ fontSize: 18, textAlign: 'center', marginTop: 10 }}>Retorno Página Produto</Text>
             </View>
             <View>
                 {/* {
@@ -34,7 +34,7 @@ const Home = ({ navigation }) => {
                 } */}
                 <FlatList
                     data={produtos}
-                    onRefresh={()=>{setProdutos(listarProdutos)}}
+                    onRefresh={() => { setProdutos(listarProdutos) }}
                     refreshing={false}
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={({ item, index }) => {

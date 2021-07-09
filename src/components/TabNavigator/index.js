@@ -1,10 +1,8 @@
 import React from 'react';
-import { View, Modal } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../../pages/Home'
 import Perfil from '../../pages/Perfil'
 import DrawerCarrinho from '../DrawerCarrinho';
-import Cadastro from '../../pages/Produto/Cadastro'
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = ({ navigation }) => {
@@ -19,7 +17,7 @@ const TabNavigator = ({ navigation }) => {
             }}
         >
                 <Tab.Screen
-                    name='Carrinho'
+                    name='Desafios'
                     component={DrawerCarrinho}
                     listeners={({ navigation }) => ({
                         tabPress: e => {
@@ -27,7 +25,6 @@ const TabNavigator = ({ navigation }) => {
                             navigation.openDrawer();
                         }
                     })} />
-                <Tab.Screen name='Cadastro' component={Cadastro} />
                 <Tab.Screen name='Home' component={Home} />
                 <Tab.Screen name='Perfil' component={Perfil} />
         </Tab.Navigator>
