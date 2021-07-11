@@ -16,21 +16,19 @@ const TabNavigator = ({ navigation }) => {
                 inactiveBackgroundColor: '#1E4B75'
             }}
         >
-                <Tab.Screen
-                    name='Desafios'
-                    component={DrawerCarrinho}
-                    listeners={({ navigation }) => ({
-                        tabPress: e => {
-                            e.preventDefault();
-                            navigation.openDrawer();
-                        }
-                    })} />
-                <Tab.Screen name='Home' component={Home} />
-                <Tab.Screen name='Perfil' component={Perfil} />
+            <Tab.Screen
+                name='Desafios'
+                component={DrawerCarrinho}
+                listeners={({ navigation }) => ({
+                    tabPress: e => {
+                        e.preventDefault();
+                        navigation.openDrawer();
+                    }
+                })} />
+            <Tab.Screen name='Home' component={Home} />
+            <Tab.Screen name='Perfil' component={Perfil} />
         </Tab.Navigator>
     )
 }
-
-
 
 export default TabNavigator;
