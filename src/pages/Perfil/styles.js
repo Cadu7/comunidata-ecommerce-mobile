@@ -18,16 +18,18 @@ const styles = StyleSheet.create ({
         justifyContent:'center',
         display: 'flex',
         flexDirection: 'column',
+        paddingBottom:200
     },
     elements: {
         marginTop: 30,
         flexDirection:'row'
     },
     text:{
-        padding: 20,
+        padding: 10,
         fontSize: 30,
         color: 'white',
-        fontFamily: 'Verdana'
+        fontFamily: 'Verdana',
+        marginBottom:0,
     },
     input:{
         color:'black',
