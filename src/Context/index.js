@@ -1,13 +1,13 @@
 import React, { useState, createContext } from 'react'
 
-export const Formcontext = createContext();
-export function FormProvider({ children }) {
+export const Clientecontext = createContext();
+export function AppProvider({ children }) {
 
     const [isLogged, setIsLogged] = useState(false);
 
     return (
-        <Formcontext.Provider value={{ isLogged, setIsLogged }}>
+        <Clentecontext.Provider value={{ isLogged, setIsLogged }}>
             {children}
-        </Formcontext.Provider>
+        </Clentecontext.Provider>
     )
 };
