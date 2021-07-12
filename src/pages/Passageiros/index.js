@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { View, FlatList, Text, Image, ActivityIndicator, StyleSheet } from 'react-native'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { Container, AreaText, AreaImage, Img } from './styles'
@@ -17,7 +17,6 @@ const Passageiros = () => {
     getPassageiros()
   }, [])
 
-
   const renderFooter = () => {
     if (!dados.loading)
       return null
@@ -27,7 +26,6 @@ const Passageiros = () => {
       </View>
     )
   }
-
 
   getPassageiros = () => {
     if (dados.loading)
@@ -49,8 +47,6 @@ const Passageiros = () => {
       }).catch((error) => {
         console.log(error);
       });
-
-
   }
 
   return (
@@ -86,11 +82,9 @@ const Passageiros = () => {
 
 const styles = StyleSheet.create({
 
-
   loading: {
     alignSelf: 'center',
     marginVertical: 20,
   },
 });
-
 export default Passageiros;

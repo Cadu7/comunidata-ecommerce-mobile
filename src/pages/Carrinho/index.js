@@ -1,5 +1,5 @@
-import React from 'react'
 import { View, Text, FlatList } from 'react-native'
+import React from 'react'
 
 const Carrinho = () => {
 
@@ -23,5 +23,4 @@ const Carrinho = () => {
         </View>
     )
 }
-
 export default Carrinho;

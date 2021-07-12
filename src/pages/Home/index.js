@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Button, FlatList, ScrollView } from 'react-native';
-import styles from './styles'
 import { listarProdutos } from '../../data/Produto/produto_db';
 import Commerce from '@chec/commerce.js';
 import axios from 'axios';
-
-
+import DrawerCarrinho from '../../components/DrawerCarrinho'
+import React, { useState, useEffect } from 'react';
+import styles from './styles'
 
 const Home = ({ navigation }) => {
 
