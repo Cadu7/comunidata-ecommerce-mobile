@@ -1,14 +1,13 @@
 import { View, Text, Button, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import React, { useContext } from 'react';
-import { Formcontext } from '../../Context'
+import { Clientecontext } from '../../Context'
 
 const Perfil = () => {
 
-    const { isLogged, setIsLogged } = useContext(Formcontext);
+    const { isLogged, setIsLogged } = useContext(Clientecontext);
 
     function Mudar() {
-        console.log("mudei")
         setIsLogged(!isLogged);
     }
 
