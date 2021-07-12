@@ -1,19 +1,45 @@
 import { View, Text, TouchableOpacity, Button, FlatList, ScrollView } from 'react-native';
 import { listarProdutos } from '../../data/Produto/produto_db';
+import Commerce from '@chec/commerce.js';
+import axios from 'axios';
 import DrawerCarrinho from '../../components/DrawerCarrinho'
-import CarrinhoModal from '../../components/CarrinhoModal';
-import CardProduto from '../../components/CardProdutos'
 import React, { useState, useEffect } from 'react';
 import styles from './styles'
 
 const Home = ({ navigation }) => {
 
+  const commerce = new Commerce('pk_test_301549b9c987e44b16e8c9b321eb64d1db21ca4387587');
+
+
   const [produtos, setProdutos] = useState([]);
+  const [categorias, setCategorias] = useState();
 
   useEffect(() => {
     const refresh = navigation.addListener('focus', () => {
       setProdutos(listarProdutos())
+
+      // axios.get('https://api.chec.io/v1/categories').then((response) => {
+      //   setCategorias(response.data.data)
+      // }).catch((error)=> {
+      //   console.log(error)
+      // })
+      // axios.get('https://api.chec.io/v1/categoriesr', {
+      //   headers: {
+      //     'Authorization': `pk_test_301549b9c987e44b16e8c9b321eb64d1db21ca4387587`
+      //   }
+      // })
+      //   .then((res) => {
+      //     console.log(res.data.data.name)
+      //   })
+      //   .catch((error) => {
+      //     console.error(error)
+      //   })
+
     })
+    commerce.categories.list()
+    .then((resp) => resp.data.map(r=>/*setCategorias(...categorias, r.name)*/ console.log(r.name)))
+    .then(setCategorias(r.name))
+    console.log('state', categorias);
   }, [])
 
   return (

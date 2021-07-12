@@ -1,7 +1,7 @@
 import { View, Text, Button, KeyboardAvoidingView, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { Clientecontext } from '../../Context/ClienteContext'
 import React, { useContext, useState } from 'react';
 import clientes from '../../mock/Clientes.json'
-import { Clientecontext } from '../../Context'
 import styles from './styles';
 
 const Perfil = () => {

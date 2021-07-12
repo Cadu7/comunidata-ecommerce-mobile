@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react'
 
 export const Clientecontext = createContext();
-export function AppProvider({ children }) {
+export function ClienteProvider({ children }) {
 
     const [isLogged, setIsLogged] = useState(false);
 

@@ -1,20 +1,23 @@
-import { NavigationContainer } from '@react-navigation/native';
-import DrawerCarrinho from './components/DrawerCarrinho';
-import RootStack from './components/RootStack';
+
+import React from 'react';
 import Header from './components/Header';
-import { AppProvider } from './Context'
-import { View } from 'react-native';
-import React from 'react'
+import DrawerCarrinho from './components/DrawerCarrinho';
+import { ClienteProvider } from './Context/ClienteContext';
+import  CarrinhoProvider  from './Context/CarrinhoContext/CarrinhoProvider';
+import { NavigationContainer } from '@react-navigation/native';
+
 
 const App = () => {
   return (
     <>
-      <AppProvider>
-        <Header />
-        <NavigationContainer>
-          <DrawerCarrinho />
-        </NavigationContainer>
-      </AppProvider>
+      <CarrinhoProvider>
+        <ClienteProvider>
+          <Header />
+          <NavigationContainer>
+            <DrawerCarrinho />
+          </NavigationContainer>
+        </ClienteProvider>
+      </CarrinhoProvider>
     </>
   );
 };
