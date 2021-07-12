@@ -1,10 +1,11 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useRef } from 'react'
+import { View, Text, FlatList } from 'react-native'
 
 const Carrinho = () => {
+
     return (
         <View>
-            <Text>Eu sou um Carrinho!!</Text>
+            <Text> Carrinho !!!</Text>
         </View>
     )
 }
