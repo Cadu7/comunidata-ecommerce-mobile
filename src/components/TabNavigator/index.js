@@ -6,18 +6,18 @@ import CarrinhoModal from '../CarrinhoModal';
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = ({ navigation }) => {
-  return (
-    <>
-      <Tab.Navigator
-        initialRouteName="Perfil"
-        tabBarOptions={{
-          activeTintColor: 'white',
-          inactiveTintColor: 'gray',
-          activeBackgroundColor: '#1E4B75',
-          inactiveBackgroundColor: '#1E4B75'
-        }}
-      >
-        {/* <Tab.Screen
+
+    return (
+        <Tab.Navigator
+            initialRouteName="Home"
+            tabBarOptions={{
+                activeTintColor: 'white',
+                inactiveTintColor: 'gray',
+                activeBackgroundColor: '#1E4B75',
+                inactiveBackgroundColor: '#1E4B75'
+            }}
+        >
+                  {/* <Tab.Screen
           name='Carrinho'
           component={CarrinhoModal}
           listeners={( navigation ) => ({
@@ -27,13 +27,19 @@ const TabNavigator = ({ navigation }) => {
             }
           })}
         /> */}
-        <Tab.Screen name='Home' component={Home} />
-        <Tab.Screen name='Perfil' component={Perfil} />
-      </Tab.Navigator>
-    </>
-  )
+            <Tab.Screen
+                name='Desafios'
+                component={DrawerCarrinho}
+                listeners={({ navigation }) => ({
+                    tabPress: e => {
+                        e.preventDefault();
+                        navigation.openDrawer();
+                    }
+                })} />
+            <Tab.Screen name='Home' component={Home} />
+            <Tab.Screen name='Perfil' component={Perfil} />
+        </Tab.Navigator>
+    )
 }
-
-
 
 export default TabNavigator;
