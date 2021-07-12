@@ -1,5 +1,5 @@
 import { View, Text, Button, KeyboardAvoidingView, TextInput, TouchableOpacity, Alert } from 'react-native';
-import { Clientecontext } from '../../Context'
+import { Clientecontext } from '../../Context/ClienteContext'
 import React, { useContext, useState } from 'react';
 import styles from './styles';
 import clientes from '../../mock/Clientes.json'
