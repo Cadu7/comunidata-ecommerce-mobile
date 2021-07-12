@@ -4,6 +4,7 @@ import Header from './components/Header';
 import RootStack from './components/RootStack';
 import { AppProvider } from './Context'
 import { View } from 'react-native';
+import DrawerCarrinho from './components/DrawerCarrinho';
 
 const App = () => {
   return (

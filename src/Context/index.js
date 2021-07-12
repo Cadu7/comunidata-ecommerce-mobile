@@ -6,8 +6,8 @@ export function AppProvider({ children }) {
     const [isLogged, setIsLogged] = useState(false);
 
     return (
-        <Clentecontext.Provider value={{ isLogged, setIsLogged }}>
+        <Clientecontext.Provider value={{ isLogged, setIsLogged }}>
             {children}
-        </Clentecontext.Provider>
+        </Clientecontext.Provider>
     )
 };

@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../../pages/Home'
 import Perfil from '../../pages/Perfil'
 import CarrinhoModal from '../CarrinhoModal';
+import DrawerCarrinho from '../DrawerCarrinho';
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = ({ navigation }) => {
