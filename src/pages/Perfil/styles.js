@@ -8,10 +8,20 @@ const styles = StyleSheet.create ({
         backgroundColor: "#242528",
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+    },
+    containerLogin: {
+        height: 655,
+        margin: 5,
+        borderRadius:9,
+        backgroundColor: "#242528",
+        alignItems:'center',
+        justifyContent:'center',
+        display: 'flex',
+        flexDirection: 'column',
     },
     elements: {
-        marginTop: 50
+        marginTop: 30,
+        flexDirection:'row'
     },
     text:{
         padding: 20,
@@ -25,14 +35,12 @@ const styles = StyleSheet.create ({
         margin: 20,
         backgroundColor:'white',
         width: 300,
-
     },   
     acess:{
         height: 45,
         width: 100,
         backgroundColor:'#1E4B60',
         borderRadius: 9,
-        
     },
     sumitText:{
         marginTop:7,
@@ -46,6 +54,11 @@ const styles = StyleSheet.create ({
         color: 'white',
         fontFamily: 'Verdana'
     },
+    textnome:{
+        padding: 7,
+        fontSize: 22,
+        color: 'white',
+        fontFamily: 'Verdana'
+    },
 })
-
 export default styles;

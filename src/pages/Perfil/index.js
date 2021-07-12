@@ -15,15 +15,15 @@ const Perfil = () => {
         return (
             <View style={styles.container}>
                 <View style={styles.elements}>
-                    <Text style={styles.textPerfil}>Nome Completo</Text>
+                    <Text style={styles.textPerfil}>Nome Completo:</Text>
                     <Text style={styles.textnome}>Nome Completo</Text>
                 </View>
                 <View style={styles.elements}>
-                    <Text style={styles.textPerfil}>Email</Text>
+                    <Text style={styles.textPerfil}>Email:</Text>
                     <Text style={styles.textnome}>Email</Text>
                 </View>
                 <View style={styles.elements}>
-                    <Text style={styles.textPerfil}>Telefone</Text>
+                    <Text style={styles.textPerfil}>Telefone:</Text>
                     <Text style={styles.textnome}>Telefone</Text>
                 </View>
                 <View style={styles.elements}>
@@ -37,7 +37,7 @@ const Perfil = () => {
     } else {
         return (
             <KeyboardAvoidingView>
-                <View style={styles.container}>
+                <View style={styles.containerLogin}>
                     <Text style={styles.text}>Login</Text>
                     <TextInput 
                         placeholderTextColor='black'
