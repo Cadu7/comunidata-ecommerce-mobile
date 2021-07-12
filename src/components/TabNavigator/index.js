@@ -10,6 +10,7 @@ const TabNavigator = ({ navigation }) => {
         <Tab.Navigator
             initialRouteName="Home"
             tabBarOptions={{
+                keyboardHidesTabBar:true,
                 activeTintColor: 'white',
                 inactiveTintColor: 'gray',
                 activeBackgroundColor: '#1E4B75',
@@ -30,5 +31,4 @@ const TabNavigator = ({ navigation }) => {
         </Tab.Navigator>
     )
 }
-
 export default TabNavigator;
