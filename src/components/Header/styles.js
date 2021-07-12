@@ -4,22 +4,23 @@ const styles = StyleSheet.create({
     header: {
         backgroundColor: '#1E4B75',
         flexDirection: 'row',
+        padding: 8,
         justifyContent: 'center',
-        padding: 12
+        paddingRight:20
     },
     text: {
         fontWeight: 'bold',
-        fontSize: 20,
         letterSpacing: 0.5,
         color: '#FFF',
-        fontSize: 16,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: 10
+        fontSize: 18,
+        marginLeft: 30,
     },
-    nomeText: {
-        fontSize: 15,
-        color: 'white',
-    }
+    button: {
+        alignItems: "center",
+        backgroundColor: "#DDDDDD",
+        height:20,
+        width:80,
+        marginLeft:40
+      }
 });
 export default styles;

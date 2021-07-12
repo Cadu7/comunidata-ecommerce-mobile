@@ -17,23 +17,29 @@ const Header = ({ navigation }) => {
         <View style={styles.header}>
             <Image
                 source={require('../../assets/logoCanto.png')}
-                style={{ width: 30, height: 30 }}
+                style={{ width: 30, height: 30, resizeMode: 'contain' }}
                 resizeMode="contain"
             />
             <View >
                 <Text style={styles.text}>ComuniData</Text>
-                <TextInput style={styles.nomeText} name='nomeProduto'
-                    placeholder='Nome do Produto'
-                    placeholderTextColor='white'
-                    style={styles.textInput}
-                    underlineColorAndroid='transparent'
-                    onChangeText={nome => setNome(nome)}
-                    value={nome}
-                />
-                <Icon
-                    name='search'
-                    type='ionicon'
-                />
+                <View>
+                    <TextInput style={styles.nomeText} name='nomeProduto'
+                        placeholder='Digite o nome do produto'
+                        placeholderTextColor='white'
+
+                        style={styles.textInput}
+                        underlineColorAndroid='transparent'
+                        onChangeText={nome => setNome(nome)}
+                        value={nome}
+                    />
+                    <TouchableOpacity
+                        style={styles.button}
+                        //onPress={}
+                       
+                    >
+                        <Text>Pesquisar</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
             {/*<TouchableOpacity component={DrawerCarrinho} onPress={() => navigation.openDrawer()}>
                     <View style={{width: 35, height: 3, backgroundColor: '#000', marginVertical: 2.5}}/>

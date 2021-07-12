@@ -23,15 +23,6 @@ const Home = ({ navigation }) => {
         <Text style={{ fontSize: 18, textAlign: 'center', marginTop: 10 }}>Retorno Página Produto</Text>
       </View>
       <View>
-        {/* {
-          produtos.map(produto => {
-            return (
-              <View>
-                <CardProduto item={produto} key={produto.produto_id} />
-              </View>
-            )
-          })
-        } */}
         <FlatList
           data={produtos}
           onRefresh={() => { setProdutos(listarProdutos) }}
