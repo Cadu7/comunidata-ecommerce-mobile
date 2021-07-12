@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
 import { View, Text, FlatList } from 'react-native'
+import React, { useRef } from 'react'
 
 const Carrinho = () => {
 
@@ -9,5 +9,4 @@ const Carrinho = () => {
         </View>
     )
 }
-
 export default Carrinho;
