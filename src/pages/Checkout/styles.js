@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
     },
-
     tituloPedido: {
         marginVertical: 20,
         justifyContent: 'center',
@@ -24,7 +23,6 @@ const styles = StyleSheet.create({
         borderColor: '#cfcfcf',
         borderRadius: 50,
     },
-
         areaProduto: {
         flexDirection: 'row',
         padding: 5,
@@ -36,7 +34,6 @@ const styles = StyleSheet.create({
         height: 80,
         width: 370,
     },
-
     areaImagemProduto: {
         flex: 0.2,
         display: 'flex',
@@ -44,34 +41,28 @@ const styles = StyleSheet.create({
         alignItems: 'center',
 
     },
-
     imagemProduto: {
         height: 65,
         width: 65,    
     },
-
     areaNomeProduto: {
         flex: 0.65,
     },
-
     nomeProduto: {
         marginLeft: 10,
         color: 'white',
         fontSize: 20,
     },
-
     areaPrecoProduto: {
         flex: 0.15,
         justifyContent: 'flex-end',
         alignItems: 'flex-end'
     },
-
     precoProduto: {
         color: 'white',
         fontSize: 16,
         backgroundColor: '#424a4a',
     },
-
     areaFecharCompra: {
         margin: 10,
         backgroundColor: '#424a4a',
@@ -81,19 +72,16 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: '#cfcfcf',
     },
-
     botaoFecharCompra: {
         paddingVertical: 10,
         paddingHorizontal: 30,
         justifyContent: 'center',
         alignItems: 'center',
     },
-
     textoFecharCompra: {
         color: 'white',
         fontSize: 30,
         fontWeight: 'bold',
     },
 })
-
 export default styles;

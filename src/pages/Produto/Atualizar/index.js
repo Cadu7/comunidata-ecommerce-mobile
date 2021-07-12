@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { View, TextInput, TouchableOpacity, Image, Text } from 'react-native'
 import { atualizarProduto, deletarProduto, listarProdutos } from '../../../data/Produto/produto_db'
+import { View, TextInput, TouchableOpacity, Image, Text } from 'react-native'
+import React, { useState } from 'react'
 
 const Atualizar = () => {
     const [id, setId] = useState(null);
@@ -50,5 +50,4 @@ const Atualizar = () => {
         </>
     )
 }
-
 export default Atualizar;

@@ -1,8 +1,8 @@
 import { View, Text, Button, KeyboardAvoidingView, TextInput, TouchableOpacity, Alert } from 'react-native';
-import { Clientecontext } from '../../Context'
 import React, { useContext, useState } from 'react';
-import styles from './styles';
 import clientes from '../../mock/Clientes.json'
+import { Clientecontext } from '../../Context'
+import styles from './styles';
 
 const Perfil = () => {
 
@@ -73,7 +73,7 @@ const Perfil = () => {
                         style={styles.input}
                         placeholder="Email"
                         autoCorrect={false}
-                        onChange={email => setEmail(email.value)}
+                        onChange={email => setEmail(email)}
                         value={email}
                     />
                     <TextInput
@@ -81,7 +81,7 @@ const Perfil = () => {
                         style={styles.input}
                         placeholder="Senha"
                         autoCorrect={false}
-                        onChange={senha => setSenha(senha.value)}
+                        onChange={senha => setSenha(senha)}
                         value={senha}
                     />
                     <TouchableOpacity style={styles.acess} onPress={() => HandleLogin()}>

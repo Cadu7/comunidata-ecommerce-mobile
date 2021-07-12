@@ -1,10 +1,10 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import Header from './components/Header';
+import DrawerCarrinho from './components/DrawerCarrinho';
 import RootStack from './components/RootStack';
+import Header from './components/Header';
 import { AppProvider } from './Context'
 import { View } from 'react-native';
-import DrawerCarrinho from './components/DrawerCarrinho';
+import React from 'react'
 
 const App = () => {
   return (
@@ -18,5 +18,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;

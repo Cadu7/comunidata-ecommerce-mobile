@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 import { buscarPorNome } from '../../data/Produto/produto_db';
+import { TextInput } from 'react-native-gesture-handler';
 import DrawerCarrinho from '../DrawerCarrinho';
-import styles from './styles';
 import { Icon } from 'react-native-elements';
+import React, { useState } from 'react';
+import styles from './styles';
 
 const Header = ({ navigation }) => {
     const [nome, setNome] = useState(null);
@@ -40,14 +40,8 @@ const Header = ({ navigation }) => {
                     <View style={{width: 35, height: 3, backgroundColor: '#000', marginVertical: 2.5,}}/>
                     <View style={{width: 35, height: 3, backgroundColor: '#000', marginVertical: 2.5}}/>
                 </TouchableOpacity>*/}
-
         </View>
-
-
-
     )
 }
-
-
 export default Header;
 

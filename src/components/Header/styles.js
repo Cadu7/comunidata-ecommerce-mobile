@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native'
 
-
 const styles = StyleSheet.create({
     header: {
         backgroundColor: '#1E4B75',
@@ -17,15 +16,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: 10
-
     },
     nomeText: {
         fontSize: 15,
         color: 'white',
-        
-
-
     }
 });
-
 export default styles;
