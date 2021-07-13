@@ -1,0 +1,106 @@
+[
+  {
+    "id":1,
+    "nome": "Playstation 4",
+    "descricao": "Console da sony",
+    "ValorUnitario": 2800
+  },
+  {
+    "id":2,
+    "nome": "Playstation 5",
+    "descricao": "Console novo da sony",
+    "ValorUnitario": 4500,
+    "categoria":1
+  },
+  {
+    "id":3,
+    "nome": "Xbox Series X",
+    "descricao": "Console novo da microsoft",
+    "ValorUnitario": 5000,
+    "categoria":1
+  },
+  {
+    "id":4,
+    "nome": "Vestido Vermelho",
+    "descricao": "longo",
+    "ValorUnitario": 400,
+    "categoria":2
+  },
+  {
+    "id":5,
+    "nome": "Casaco Branco",
+    "descricao": "para as noites frias de petrópolis",
+    "ValorUnitario": 200,
+    "categoria":2
+  },
+  {
+    "id":6,
+    "nome": "Bermuda",
+    "descricao": "para os dias quentes",
+    "ValorUnitario": 100,
+    "categoria":2
+  },
+  {
+    "id":7,
+    "nome": "Geladeira",
+    "descricao": "Preserva seus alimentos favoritos",
+    "ValorUnitario": 1200,
+    "categoria":3
+  },
+  {
+    "id":8,
+    "nome": "Lava-louças",
+    "descricao": "limpa suas louças favoritas",
+    "ValorUnitario": 1400,
+    "categoria":3
+  },
+  {
+    "id":9,
+    "nome": "Fogão",
+    "descricao": "prepara suas comidas favoritas",
+    "ValorUnitario": 1100,
+    "categoria":3
+  },
+  {
+    "id":10,
+    "nome": "Cartão pré pago Google Play",
+    "descricao": "para comprar suas coisas favoritas",
+    "ValorUnitario": 30,
+    "categoria":4
+  },
+  {
+    "id":11,
+    "nome": "Cartão pré pago Spotify",
+    "descricao": "para ouvir suas músicas favoritas",
+    "ValorUnitario": 50,
+    "categoria":4
+  },
+  {
+    "id":12,
+    "nome": "Cartão pré pago Netflix",
+    "descricao": "para assistir seus filmes favoritos",
+    "ValorUnitario": 70,
+    "categoria":4
+  },
+  {
+    "id":13,
+    "nome": "Sonho",
+    "descricao": "O ceu é o limite!",
+    "ValorUnitario": 2,
+    "categoria":5
+  },
+  {
+    "id":14,
+    "nome": "Pesadelo",
+    "descricao": "sonho^-1",
+    "ValorUnitario": 2800,
+    "categoria":5
+  },
+  {
+    "id":15,
+    "nome": "Falafel",
+    "descricao": "Falafel??",
+    "ValorUnitario": 5,
+    "categoria":5
+  }
+]

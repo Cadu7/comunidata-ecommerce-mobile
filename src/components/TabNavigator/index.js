@@ -4,6 +4,7 @@ import Home from '../../pages/Home'
 import Perfil from '../../pages/Perfil'
 import CarrinhoModal from '../CarrinhoModal';
 import DrawerCarrinho from '../DrawerCarrinho';
+import Carrinho from '../../pages/Carrinho';
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = ({ navigation }) => {
