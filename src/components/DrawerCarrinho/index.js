@@ -1,9 +1,9 @@
-import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import TabNavigator from '../TabNavigator'
-import Passageiros from '../../pages/Passageiros';
 import Cadastro from '../../pages/Produto/Cadastro';
+import Passageiros from '../../pages/Passageiros';
 import Checkout from '../../pages/Checkout';
+import TabNavigator from '../TabNavigator'
+import React from 'react';
 
 const Drawer = createDrawerNavigator();
 

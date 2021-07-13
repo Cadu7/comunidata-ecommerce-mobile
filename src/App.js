@@ -1,22 +1,24 @@
+
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import Header from './components/Header';
-import RootStack from './components/RootStack';
-import { AppProvider } from './Context'
-import { View } from 'react-native';
 import DrawerCarrinho from './components/DrawerCarrinho';
+import { ClienteProvider } from './Context/ClienteContext';
+import  CarrinhoProvider  from './Context/CarrinhoContext/CarrinhoProvider';
+import { NavigationContainer } from '@react-navigation/native';
+
 
 const App = () => {
   return (
     <>
-      <AppProvider>
-        <Header />
-        <NavigationContainer>
-          <DrawerCarrinho />
-        </NavigationContainer>
-      </AppProvider>
+      <CarrinhoProvider>
+        <ClienteProvider>
+          <Header />
+          <NavigationContainer>
+            <DrawerCarrinho />
+          </NavigationContainer>
+        </ClienteProvider>
+      </CarrinhoProvider>
     </>
   );
 };
-
 export default App;

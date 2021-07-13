@@ -1,5 +1,5 @@
-import React from 'react'
 import { View } from 'react-native'
+import React from 'react'
 
 const Listagem = () => {
     return (
@@ -8,5 +8,4 @@ const Listagem = () => {
         </View>
     )
 }
-
 export default Listagem;

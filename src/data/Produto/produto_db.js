@@ -58,8 +58,7 @@ let atualizarProduto = (nome, descricao, preco, id) => {
 let deletarProduto = (id) => {
     let savedItens = listarProdutos();
     realm_produto.write(()=>{
-        realm_produto.delete(realm_produto.objectForPrimaryKey('Produto2', id));
-        
+        realm_produto.delete(realm_produto.objectForPrimaryKey('Produto2', id));       
     })
 }
 

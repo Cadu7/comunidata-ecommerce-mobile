@@ -1,34 +1,18 @@
 import { View, Text, Button, KeyboardAvoidingView, TextInput, TouchableOpacity, Alert } from 'react-native';
-import { Clientecontext } from '../../Context'
+import { Clientecontext } from '../../Context/ClienteContext'
 import React, { useContext, useState } from 'react';
-import styles from './styles';
 import clientes from '../../mock/Clientes.json'
+import styles from './styles';
 
 const Perfil = () => {
 
     const { isLogged, setIsLogged } = useContext(Clientecontext);
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState()
     const [senha, setSenha] = useState("")
+    const [usuario, setUsuario] = useState({})
 
-    // const handleLogin = (e) => {
-    //     const usuario = clientes.filter(cliente => cliente.nomeUsuario === nome)[0]
-    //     if (nome === "admin") {
-    //         console.log("entrei no admin");
-    //         history.push("/admin")
-    //     } else if (usuario !== undefined) {
-    //         console.log("entrei no cliente");
-    //         history.push(/clientes/${ usuario.id })
-    //     } else {
-    //         alert("Usuario não cadastrado")
-    //     }
-    // }
-
-    function HandleLogin(e) {
-        //e.preventDefault();
-        const usuario = clientes.filter((cliente) => cliente.email === email)[0]
-        console.log("email:",email)
-        console.log("usuario:",usuario)
-        console.log(clientes)
+    function HandleLogin() {
+        setUsuario(clientes.filter(cliente => cliente.email == email)[0])
         if (usuario !== undefined) {
             setIsLogged(!isLogged);
             alert("Login feito com sucesso")
@@ -42,26 +26,22 @@ const Perfil = () => {
             <View style={styles.container}>
                 <View style={styles.elements}>
                     <Text style={styles.textPerfil}>Nome Completo:</Text>
-                    <Text style={styles.textnome}>{cliente.nome}</Text>
+                    <Text style={styles.textnome}>{usuario.nome}</Text>
                 </View>
                 <View style={styles.elements}>
                     <Text style={styles.textPerfil}>Email:</Text>
-                    <Text style={styles.textnome}>{cliente.email}</Text>
+                    <Text style={styles.textnome}>{usuario.email}</Text>
                 </View>
                 <View style={styles.elements}>
                     <Text style={styles.textPerfil}>Telefone:</Text>
-                    <Text style={styles.textnome}>{cliente.telefone}</Text>
-                </View>
-                <View style={styles.elements}>
-                    <Text style={styles.textPerfil}>Pedidos</Text>
-                    <Text style={styles.textnome}>{cliente.pedidos}</Text>
+                    <Text style={styles.textnome}>{usuario.telefone}</Text>
                 </View>
                 <View style={styles.elements}>
                     <Text style={styles.textPerfil}>Favoritos</Text>
-                    <Text style={styles.textnome}>{cliente.favoritos}</Text>
+                    <Text style={styles.textnome}>{usuario.favoritos}</Text>
                 </View>
-                <Button title="mudar" onPress={() => Mudar()}></Button>
-            </View>)
+            </View>
+        )
     } else {
         return (
             <KeyboardAvoidingView>
@@ -73,7 +53,7 @@ const Perfil = () => {
                         style={styles.input}
                         placeholder="Email"
                         autoCorrect={false}
-                        onChange={email => setEmail(email.value)}
+                        onChangeText={email => setEmail(email)}
                         value={email}
                     />
                     <TextInput
@@ -81,10 +61,10 @@ const Perfil = () => {
                         style={styles.input}
                         placeholder="Senha"
                         autoCorrect={false}
-                        onChange={senha => setSenha(senha.value)}
+                        onChangeText={senha => setSenha(senha)}
                         value={senha}
                     />
-                    <TouchableOpacity style={styles.acess} onPress={() => HandleLogin()}>
+                    <TouchableOpacity style={styles.acess} onPress={HandleLogin}>
                         <Text style={styles.sumitText}>Acessar</Text>
                     </TouchableOpacity>
                 </View>
