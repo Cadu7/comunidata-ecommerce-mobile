@@ -1,17 +1,21 @@
-import { View, Text, TouchableOpacity, Button, FlatList, ScrollView, SectionList } from 'react-native';
+
+import { View, Text, FlatList, ImageBackground, Touchable, TouchableOpacity, Alert } from 'react-native';
 import { listarProdutos } from '../../data/Produto/produto_db';
-import axios from 'axios';
-import Commerce from '@chec/commerce.js';
 import DrawerCarrinho from '../../components/DrawerCarrinho'
+import Categorias from '../../mock/Categorias.json';
 import React, { useState, useEffect } from 'react';
-import styles from './styles'
+import Produtos from '../../mock/Produtos.json';
+import Commerce from '@chec/commerce.js';
+import styles from './styles';
+import axios from 'axios';
+
 
 const Home = ({ navigation }) => {
 
   // const commerce = new Commerce('pk_test_301549b9c987e44b16e8c9b321eb64d1db21ca4387587');
   const commerce = new Commerce('pk_test_301549b9c987e44b16e8c9b321eb64d1db21ca4387587');
 
-  
+
   const [produtos, setProdutos] = useState([]);
   const [categorias, setCategorias] = useState([]);
   const [prodCat, setProdCat] = useState({});
@@ -35,11 +39,16 @@ const Home = ({ navigation }) => {
     fetchCategories();
   }, [])
 
+  // 
+  function Comprar() {
+    Alert.alert('Tem certeza que deseja adicionar o produto ao carrinho?', ' ', [{text: 'Cancelar',},
+    {text: 'Confirmar',}])
+  }
+  
   return (
-    <View>
-      <View>
-        <Text>Carroussel</Text>
-        <Text style={{ fontSize: 18, textAlign: 'center', marginTop: 10 }}>Retorno Página Produto</Text>
+    <View style={styles.superContainer}>
+      <View style={styles.tituloContainer}>
+        <Text style={styles.titulo}>Produtos</Text>
       </View>
       <View>
         <FlatList
@@ -57,10 +66,17 @@ const Home = ({ navigation }) => {
                   renderItem={({ item: produto }) => {
                     //console.log('PRODUTO: ', produto);
                     return (
-                      <View style={styles.viewContainer}>
-                        <Text>{produto.nome} </Text>
-                        <Text>R${produto.valorUnitario} </Text>
-                        {/* precisamos de um botão para adicionar ao carrinho!! */}
+                    <View style={styles.viewContainerCard}>
+                        <TouchableOpacity
+                        onPress= {Comprar}>
+                          <Text style={styles.textoCard}>{produto.nome}</Text>
+                          <Text style={styles.textoCard}>R$ {produto.ValorUnitario}</Text>
+                          <ImageBackground
+                            realizeMode='center'
+                            source={{ uri: produto.url }}
+                            style={styles.imageProduto}
+                          />
+                        </TouchableOpacity>
                       </View>
                     )
                   }} />
@@ -72,3 +88,5 @@ const Home = ({ navigation }) => {
   )
 }
 export default Home;
+
+
