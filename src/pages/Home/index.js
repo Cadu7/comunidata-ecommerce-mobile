@@ -12,7 +12,7 @@ const Home = ({ navigation }) => {
 
 
   const [produtos, setProdutos] = useState([]);
-  const [categorias, setCategorias] = useState();
+  const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
     const refresh = navigation.addListener('focus', () => {
@@ -36,11 +36,9 @@ const Home = ({ navigation }) => {
       //   })
 
     })
-    commerce.categories.list()
-    .then((resp) => resp.data.map(r=>/*setCategorias(...categorias, r.name)*/ console.log(r.name)))
-    .then(setCategorias(r.name))
-    console.log('state', categorias);
   }, [])
+  commerce.categories.list().then((resp) => resp.data.map(r=>/*setCategorias(...categorias, ...r.name)*/console.log(r.name)));
+  console.log('state', categorias);
 
   return (
     <View>
