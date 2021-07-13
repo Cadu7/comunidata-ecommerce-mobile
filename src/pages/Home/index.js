@@ -1,13 +1,18 @@
-import { View, Text, TouchableOpacity, Button, FlatList, ScrollView, SectionList } from 'react-native';
+
+import { View, Text, FlatList, ImageBackground, Touchable, TouchableOpacity, Alert } from 'react-native';
 import { listarProdutos } from '../../data/Produto/produto_db';
-import axios from 'axios';
-import Commerce from '@chec/commerce.js';
 import DrawerCarrinho from '../../components/DrawerCarrinho'
+import Categorias from '../../mock/Categorias.json';
 import React, { useState, useEffect } from 'react';
-import styles from './styles'
+import Produtos from '../../mock/Produtos.json';
+import Commerce from '@chec/commerce.js';
+import styles from './styles';
+import axios from 'axios';
+
 
 const Home = ({ navigation }) => {
 
+  // const commerce = new Commerce('pk_test_301549b9c987e44b16e8c9b321eb64d1db21ca4387587');
   const commerce = new Commerce('pk_test_301549b9c987e44b16e8c9b321eb64d1db21ca4387587');
 
 
@@ -16,35 +21,17 @@ const Home = ({ navigation }) => {
   const [prodCat, setProdCat] = useState({});
 
   const fetchProducts = async () => {
-    const { data } = await commerce.products.list()
-    setProdutos(data)
+    const response = await axios.get('https://ecommerce-api-comunidata.herokuapp.com/produtos')
+    setProdutos(response.data)
+    console.log('PRODUTOS:', produtos)
   }
+
   //produtos.map(r => { console.log("categorias", r?.categories[0].id, "\n") });
 
   const fetchCategories = async () => {
-    const { data } = await commerce.categories.list()
-    var slugs = []
-    for (i = 0; i < data.length; i++) {
-      if(i===0){
-        slugs = [data[i].slug]
-      }else{
-        slugs = [...slugs, data[i].slug]
-      }
-      fetchProdutosByCategory(slugs)
-    }
-    setCategorias(data)
-  }
-  
-  const fetchProdutosByCategory = async (slugs) => {
-    //produtos.category_slug
-    const { data } = await commerce.products.list({
-       categories:[
-         {
-           slug: [slugs]
-         }
-       ] 
-     });
-    setProdCat(data)
+    const response = await axios.get('https://ecommerce-api-comunidata.herokuapp.com/categorias')
+    setCategorias(response.data.content)
+    console.log("CATEGORIAS: ", categorias)
   }
 
   useEffect(() => {
@@ -52,43 +39,44 @@ const Home = ({ navigation }) => {
     fetchCategories();
   }, [])
 
+  // 
+  function Comprar() {
+    Alert.alert('Tem certeza que deseja adicionar o produto ao carrinho?', ' ', [{text: 'Cancelar',},
+    {text: 'Confirmar',}])
+  }
+  
   return (
-    <View>
-      <View>
-        <Text>Carroussel</Text>
-        <Text style={{ fontSize: 18, textAlign: 'center', marginTop: 10 }}>Retorno Página Produto</Text>
+    <View style={styles.superContainer}>
+      <View style={styles.tituloContainer}>
+        <Text style={styles.titulo}>Produtos</Text>
       </View>
       <View>
-        {/* <SectionList
-          sections={categorias}
-          keyExtractor={(item, index) => item + index}
-          renderItem={({ item }) => <Item name={item} />}
-          renderSectionHeader={({ section: { prodCat } }) => (
-            <Text>{prodCat}</Text>
-          )}
-        /> */}
         <FlatList
           data={categorias}
-          onRefresh={() => { categorias }}
-          refreshing={false}
           keyExtractor={(item) => item.id}
           renderItem={({ item: categoria }) => {
+            //console.log('CATEGORIA: ', categoria.slug);
             return (
               <View style={styles.viewContainer}>
-                <Text>{categoria.name}</Text>
+                <Text style={{ fontWeight: 'bold' }}>{categoria.nome}</Text>
                 <FlatList
-                  data={prodCat}
+                  data={produtos.filter(produto => produto.categoria.id === categoria.id)}
                   horizontal={true}
-                  onRefresh={() => { prodCat }}
-                  refreshing={false}
                   keyExtractor={(item) => item.id}
                   renderItem={({ item: produto }) => {
+                    //console.log('PRODUTO: ', produto);
                     return (
-                      // Ainda está retornando o último colocado
-                      <View style={styles.viewContainer}>
-                        <Text>{produto.name}</Text>
-                        <Text>{produto.price.formatted_with_symbol}</Text>
-                        {/* precisamos de um botão para adicionar ao carrinho!! */}
+                    <View style={styles.viewContainerCard}>
+                        <TouchableOpacity
+                        onPress= {Comprar}>
+                          <Text style={styles.textoCard}>{produto.nome}</Text>
+                          <Text style={styles.textoCard}>R$ {produto.ValorUnitario}</Text>
+                          <ImageBackground
+                            realizeMode='center'
+                            source={{ uri: produto.url }}
+                            style={styles.imageProduto}
+                          />
+                        </TouchableOpacity>
                       </View>
                     )
                   }} />
@@ -100,3 +88,5 @@ const Home = ({ navigation }) => {
   )
 }
 export default Home;
+
+
