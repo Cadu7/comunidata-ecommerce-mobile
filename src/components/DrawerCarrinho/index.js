@@ -4,6 +4,7 @@ import Passageiros from '../../pages/Passageiros';
 import Checkout from '../../pages/Checkout';
 import TabNavigator from '../TabNavigator'
 import React from 'react';
+import Carrinho from '../../pages/Carrinho';
 
 const Drawer = createDrawerNavigator();
 

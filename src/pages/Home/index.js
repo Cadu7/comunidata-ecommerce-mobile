@@ -8,43 +8,26 @@ import styles from './styles'
 
 const Home = ({ navigation }) => {
 
+  // const commerce = new Commerce('pk_test_301549b9c987e44b16e8c9b321eb64d1db21ca4387587');
   const commerce = new Commerce('pk_test_301549b9c987e44b16e8c9b321eb64d1db21ca4387587');
 
-
+  
   const [produtos, setProdutos] = useState([]);
   const [categorias, setCategorias] = useState([]);
   const [prodCat, setProdCat] = useState({});
 
   const fetchProducts = async () => {
-    const { data } = await commerce.products.list()
-    setProdutos(data)
+    const response = await axios.get('https://ecommerce-api-comunidata.herokuapp.com/produtos')
+    setProdutos(response.data)
+    console.log('PRODUTOS:', produtos)
   }
+
   //produtos.map(r => { console.log("categorias", r?.categories[0].id, "\n") });
 
   const fetchCategories = async () => {
-    const { data } = await commerce.categories.list()
-    var slugs = []
-    for (i = 0; i < data.length; i++) {
-      if(i===0){
-        slugs = [data[i].slug]
-      }else{
-        slugs = [...slugs, data[i].slug]
-      }
-      fetchProdutosByCategory(slugs)
-    }
-    setCategorias(data)
-  }
-  
-  const fetchProdutosByCategory = async (slugs) => {
-    //produtos.category_slug
-    const { data } = await commerce.products.list({
-       categories:[
-         {
-           slug: [slugs]
-         }
-       ] 
-     });
-    setProdCat(data)
+    const response = await axios.get('https://ecommerce-api-comunidata.herokuapp.com/categorias')
+    setCategorias(response.data.content)
+    console.log("CATEGORIAS: ", categorias)
   }
 
   useEffect(() => {
@@ -59,35 +42,24 @@ const Home = ({ navigation }) => {
         <Text style={{ fontSize: 18, textAlign: 'center', marginTop: 10 }}>Retorno Página Produto</Text>
       </View>
       <View>
-        {/* <SectionList
-          sections={categorias}
-          keyExtractor={(item, index) => item + index}
-          renderItem={({ item }) => <Item name={item} />}
-          renderSectionHeader={({ section: { prodCat } }) => (
-            <Text>{prodCat}</Text>
-          )}
-        /> */}
         <FlatList
           data={categorias}
-          onRefresh={() => { categorias }}
-          refreshing={false}
           keyExtractor={(item) => item.id}
           renderItem={({ item: categoria }) => {
+            //console.log('CATEGORIA: ', categoria.slug);
             return (
               <View style={styles.viewContainer}>
-                <Text>{categoria.name}</Text>
+                <Text style={{ fontWeight: 'bold' }}>{categoria.nome}</Text>
                 <FlatList
-                  data={prodCat}
+                  data={produtos.filter(produto => produto.categoria.id === categoria.id)}
                   horizontal={true}
-                  onRefresh={() => { prodCat }}
-                  refreshing={false}
                   keyExtractor={(item) => item.id}
                   renderItem={({ item: produto }) => {
+                    //console.log('PRODUTO: ', produto);
                     return (
-                      // Ainda está retornando o último colocado
                       <View style={styles.viewContainer}>
-                        <Text>{produto.name}</Text>
-                        <Text>{produto.price.formatted_with_symbol}</Text>
+                        <Text>{produto.nome} </Text>
+                        <Text>R${produto.valorUnitario} </Text>
                         {/* precisamos de um botão para adicionar ao carrinho!! */}
                       </View>
                     )
