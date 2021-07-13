@@ -22,30 +22,7 @@ const Header = ({ navigation }) => {
             />
             <View >
                 <Text style={styles.text}>ComuniData</Text>
-                <View>
-                    <TextInput style={styles.nomeText} name='nomeProduto'
-                        placeholder='Digite o nome do produto'
-                        placeholderTextColor='white'
-
-                        style={styles.textInput}
-                        underlineColorAndroid='transparent'
-                        onChangeText={nome => setNome(nome)}
-                        value={nome}
-                    />
-                    <TouchableOpacity
-                        style={styles.button}
-                        //onPress={}
-                       
-                    >
-                        <Text>Pesquisar</Text>
-                    </TouchableOpacity>
-                </View>
             </View>
-            {/*<TouchableOpacity component={DrawerCarrinho} onPress={() => navigation.openDrawer()}>
-                    <View style={{width: 35, height: 3, backgroundColor: '#000', marginVertical: 2.5}}/>
-                    <View style={{width: 35, height: 3, backgroundColor: '#000', marginVertical: 2.5,}}/>
-                    <View style={{width: 35, height: 3, backgroundColor: '#000', marginVertical: 2.5}}/>
-                </TouchableOpacity>*/}
         </View>
     )
 }

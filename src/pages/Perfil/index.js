@@ -1,12 +1,12 @@
 import { View, Text, Button, KeyboardAvoidingView, TextInput, TouchableOpacity, Alert } from 'react-native';
-import { Clientecontext } from '../../Context/ClienteContext'
+import { ClienteContext } from '../../Context/ClienteContext'
 import React, { useContext, useState } from 'react';
 import clientes from '../../mock/Clientes.json'
 import styles from './styles';
 
 const Perfil = () => {
 
-    const { isLogged, setIsLogged } = useContext(Clientecontext);
+    const { isLogged, setIsLogged } = useContext(ClienteContext);
     const [email, setEmail] = useState()
     const [senha, setSenha] = useState("")
     const [usuario, setUsuario] = useState({})

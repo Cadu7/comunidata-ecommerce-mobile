@@ -20,16 +20,6 @@ const TabNavigator = ({ navigation }) => {
             }}
         >
             {/* <Tab.Screen
-          name='Carrinho'
-          component={CarrinhoModal}
-          listeners={( navigation ) => ({
-            tabPress: e => {
-              e.preventDefault();
-              navigation.navigate(CarrinhoModal)
-            }
-          })}
-        /> */}
-            <Tab.Screen
                 name='Desafios'
                 component={DrawerCarrinho}
                 listeners={({ navigation }) => ({
@@ -37,7 +27,8 @@ const TabNavigator = ({ navigation }) => {
                         e.preventDefault();
                         navigation.openDrawer();
                     }
-                })} />
+                })} /> */}
+            <Tab.Screen name='Carrinho' component={Carrinho} />
             <Tab.Screen name='Home' component={Home} />
             <Tab.Screen name='Perfil' component={Perfil} />
         </Tab.Navigator>
