@@ -5,5 +5,4 @@ export const ViewContainer = styled.view `
   height: 90;
   color: blue;
   background-color: blueviolet;
-
 `;

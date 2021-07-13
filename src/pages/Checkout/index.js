@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import { View, Text, FlatList, ImageBackground, TouchableOpacity, Alert } from 'react-native'
+import React, { useState } from 'react'
 import styles from './styles'
 
 const Checkout = ({ navigation }) => {
@@ -64,7 +64,6 @@ const Checkout = ({ navigation }) => {
         )
 
     }
-
     return (
         <View style={styles.container}>
             <Text style={styles.tituloPedido}>Pedido</Text>
@@ -102,5 +101,4 @@ const Checkout = ({ navigation }) => {
         </View>
     )
 }
-
 export default Checkout;

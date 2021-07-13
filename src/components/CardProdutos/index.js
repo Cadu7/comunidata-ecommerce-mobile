@@ -1,5 +1,5 @@
-import React from 'react';
 import { View, Text } from 'react-native';
+import React from 'react';
 
 const CardProduto = ({item}) => {
   return (
@@ -11,5 +11,4 @@ const CardProduto = ({item}) => {
     </View>
   )
 }
-
 export default CardProduto;

@@ -2,10 +2,7 @@ import React, { useRef } from 'react'
 import { Modalize } from 'react-native-modalize';
 import Carrinho from '../../pages/Carrinho';
 
-
 const CarrinhoModal = (props) => {
-
-
 
   return (
     <>
@@ -20,5 +17,4 @@ const CarrinhoModal = (props) => {
     </>
   )
 }
-
 export default CarrinhoModal;

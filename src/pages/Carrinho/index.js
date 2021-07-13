@@ -28,5 +28,4 @@ const Carrinho = () => {
         </View>
     )
 }
-
 export default Carrinho;
