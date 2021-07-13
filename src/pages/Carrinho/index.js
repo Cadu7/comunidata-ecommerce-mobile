@@ -1,31 +1,55 @@
-import React, { useContext } from 'react'
-import { View, Text, FlatList } from 'react-native'
+import React, { useContext, useEffect, useState } from 'react'
+import { View, Text, FlatList, TouchableOpacity, Alert } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context';
 import StackNav from '../../components/StackNav'
 import CarrinhoContext from '../../Context/CarrinhoContext/CarrinhoContext'
+import { ClienteContext } from '../../Context/ClienteContext';
+import styles from './styles';
 
-const Carrinho = () => {
+const Carrinho = ({ navigation }) => {
 
-    const {produtos} = useContext(CarrinhoContext)
+  const contextCarrinho = useContext(CarrinhoContext);
+  const { isLogged } = useContext(ClienteContext);
 
-    const valorTotal = produtos.reduce((total, prod) => total + prod.item.valorUnitario, 0).toFixed(2);
+  const [produtosCarrinho, setProdutosCarrinho] = useState([])
 
-    return (
-        <View>
-            <FlatList
-          data={produtos}
-          keyExtractor={(item) => item.data.id}
-          renderItem={({ item }) => {
-            return (
-              <View style={styles.viewContainer}>
-                <Text>{item.produtos.data.name}</Text>
-                <Text>{item.produtos.data.price}</Text>
-                <Text>{valorTotal}</Text>
-              </View>
-            )
-          }}
-        />
-        <StackNav />
-        </View>
-    )
-}
+  // const valorTotal = context.produtos.reduce((total, prod) => total + prod.item.valorUnitario, 0).toFixed(2);
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title} >Itens no Carrinho</Text>
+      <FlatList
+        data={contextCarrinho.produtos}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item: produto, index }) => {
+          return (
+            <View style={styles.rowcontainer}>
+              <Text style={styles.text}>Nome: {produto.produto.nome}</Text>
+              <Text style={styles.text}>Valor: {produto.produto.valorUnitario}</Text>
+            </View>
+          )
+        }}
+      />
+      <TouchableOpacity onPress={() => {
+        if(isLogged) {
+          navigation.navigate('Checkout');
+        } else {
+          Alert.alert(
+            'Usuário não cadastrado!!!!!',
+            'Por favor se cadastrar',
+            [
+              {
+                text: 'Cadastrar',
+                onPress: () => navigation.navigate('Perfil')
+              }
+            ]
+          )
+        }
+      }}>
+        <Text style={styles.title}>Checkout</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+};
+
 export default Carrinho;
