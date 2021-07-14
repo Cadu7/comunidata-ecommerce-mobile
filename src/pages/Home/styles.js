@@ -5,17 +5,20 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         backgroundColor: 'lightgray',
-        margin: 10
+        margin: 10,
     },
     titulo: {
         fontSize: 20,
         textAlign: 'center',
+
     },
     tituloContainer: {
         marginTop: 10,
         backgroundColor: 'lightblue',
-        width: 200,
-        alignSelf: 'center'
+        width: 180,
+        alignSelf: 'center',
+        borderRadius: 7,
+        height: 30
     },
     categoriaName: {
         fontSize: 20,
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
         paddingTop: 3
     },
     superContainer: {
-        height: 470,
+        height: '98%',
     }
 })
 export default styles;

@@ -17,7 +17,7 @@ const Header = ({ navigation }) => {
         <View style={styles.header}>
             <Image
                 source={require('../../assets/logoCanto.png')}
-                style={{ width: 30, height: 30 }}
+                style={styles.image}
                 resizeMode="contain"
             />
             <View >

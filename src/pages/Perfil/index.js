@@ -29,16 +29,12 @@ const Perfil = () => {
                     <Text style={styles.textnome}>{usuario.nome}</Text>
                 </View>
                 <View style={styles.elements}>
-                    <Text style={styles.textPerfil}>Email:</Text>
+                    <Text style={styles.textPerfil}>E-mail:</Text>
                     <Text style={styles.textnome}>{usuario.email}</Text>
                 </View>
                 <View style={styles.elements}>
                     <Text style={styles.textPerfil}>Telefone:</Text>
                     <Text style={styles.textnome}>{usuario.telefone}</Text>
-                </View>
-                <View style={styles.elements}>
-                    <Text style={styles.textPerfil}>Favoritos</Text>
-                    <Text style={styles.textnome}>{usuario.favoritos}</Text>
                 </View>
             </View>
         )
