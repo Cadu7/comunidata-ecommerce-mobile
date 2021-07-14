@@ -27,8 +27,10 @@ const styles = StyleSheet.create({
     },
     title: {
       marginTop: 20,
-      marginLeft: 20,
+
       fontSize: 30,
+      textAlign: 'center',
+      paddingBottom: 20
     },
     text: {
       padding: 10,
@@ -39,6 +41,15 @@ const styles = StyleSheet.create({
       alignSelf: 'flex-end',
       padding: 8,
       fontSize: 15,
+    },
+    checkout:{
+      borderWidth: 1.5, 
+      borderStyle:'solid',
+      borderRadius: 5,
+      height:80,
+      width:150,
+      marginLeft:20,
+      
     }
   });
 

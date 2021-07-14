@@ -13,7 +13,8 @@ const styles = StyleSheet.create({
         letterSpacing: 0.5,
         color: '#FFF',
         fontSize: 18,
-        marginLeft: 30,
+        marginLeft: 10,
+        marginTop: 3
     },
     button: {
         alignItems: "center",
