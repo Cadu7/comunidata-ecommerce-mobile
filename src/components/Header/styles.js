@@ -13,14 +13,16 @@ const styles = StyleSheet.create({
         letterSpacing: 0.5,
         color: '#FFF',
         fontSize: 18,
-        marginLeft: 30,
+        marginLeft: 10,
+        marginTop: 3
     },
     button: {
         alignItems: "center",
         backgroundColor: "#DDDDDD",
         height:20,
         width:80,
-        marginLeft:40
+        marginLeft:40,
+        borderRadius: 15
       }
 });
 export default styles;

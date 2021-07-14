@@ -7,13 +7,9 @@ import { ClienteContext } from '../../Context/ClienteContext';
 import styles from './styles';
 
 const Carrinho = ({ navigation }) => {
-
   const contextCarrinho = useContext(CarrinhoContext);
   const { isLogged } = useContext(ClienteContext);
-
   const [produtosCarrinho, setProdutosCarrinho] = useState([])
-
-  // const valorTotal = context.produtos.reduce((total, prod) => total + prod.item.valorUnitario, 0).toFixed(2);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -30,12 +26,12 @@ const Carrinho = ({ navigation }) => {
           )
         }}
       />
-      <TouchableOpacity onPress={() => {
+      <TouchableOpacity style={styles.checkout} onPress={() => {
         if(isLogged) {
           navigation.navigate('Checkout');
         } else {
           Alert.alert(
-            'Usuário não cadastrado!!!!!',
+            'Usuário não cadastrado!!!',
             'Por favor se cadastrar',
             [
               {
@@ -47,7 +43,7 @@ const Carrinho = ({ navigation }) => {
         }
       }}>
         <Text style={styles.title}>Checkout</Text>
-      </TouchableOpacity>
+      </TouchableOpacity >
     </SafeAreaView>
   );
 };
