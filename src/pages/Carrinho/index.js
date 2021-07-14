@@ -9,7 +9,6 @@ import styles from './styles';
 const Carrinho = ({ navigation }) => {
   const contextCarrinho = useContext(CarrinhoContext);
   const { isLogged } = useContext(ClienteContext);
-  const [produtosCarrinho, setProdutosCarrinho] = useState([])
 
   return (
     <SafeAreaView style={styles.container}>
@@ -21,12 +20,12 @@ const Carrinho = ({ navigation }) => {
           return (
             <View style={styles.rowcontainer}>
               <Text style={styles.text}>Nome: {produto.produto.nome}</Text>
-              <Text style={styles.text}>Valor: {produto.produto.valorUnitario}</Text>
+              <Text style={styles.text}>Valor: R${produto.produto.valorUnitario}</Text>
             </View>
           )
         }}
       />
-      <TouchableOpacity style={styles.checkout} onPress={() => {
+      <TouchableOpacity style={styles.buttonCheckout} onPress={() => {
         if(isLogged) {
           navigation.navigate('Checkout');
         } else {
@@ -42,7 +41,7 @@ const Carrinho = ({ navigation }) => {
           )
         }
       }}>
-        <Text style={styles.title}>Checkout</Text>
+        <Text style={styles.titleCheckout}>Checkout</Text>
       </TouchableOpacity >
     </SafeAreaView>
   );

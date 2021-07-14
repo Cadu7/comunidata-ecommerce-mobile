@@ -27,9 +27,9 @@ const styles = StyleSheet.create({
     },
     title: {
       marginTop: 20,
-
-      fontSize: 30,
+      fontSize: 22,
       textAlign: 'center',
+      fontWeight: 'bold',
       paddingBottom: 20
     },
     text: {
@@ -42,14 +42,21 @@ const styles = StyleSheet.create({
       padding: 8,
       fontSize: 15,
     },
-    checkout:{
-      borderWidth: 1.5, 
+    buttonCheckout:{
+      borderWidth: 2, 
       borderStyle:'solid',
       borderRadius: 5,
-      height:80,
-      width:150,
+      height:40,
+      width:110,
       marginLeft:20,
+      marginBottom: 10,
+      borderColor: '#1E4B75'
       
+    },
+    titleCheckout:{
+      textAlign: 'center',
+      fontSize: 18,
+      paddingTop: 3,
     }
   });
 

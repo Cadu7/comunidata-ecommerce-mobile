@@ -2,23 +2,25 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create ({
     container: {
-        height: 680,
+        height: '98%',
         margin: 5,
+        marginTop: 6,
         borderRadius:9,
         backgroundColor: "#242528",
         display: 'flex',
         flexDirection: 'column',
     },
     containerLogin: {
-        height: 655,
+        height: '98%',
         margin: 5,
+        marginTop: 6,
         borderRadius:9,
         backgroundColor: "#242528",
         alignItems:'center',
         justifyContent:'center',
         display: 'flex',
         flexDirection: 'column',
-        paddingBottom:200
+       
     },
     elements: {
         marginTop: 30,
@@ -29,7 +31,7 @@ const styles = StyleSheet.create ({
         fontSize: 30,
         color: 'white',
         fontFamily: 'Verdana',
-        marginBottom:0,
+   
     },
     input:{
         color:'black',
@@ -51,6 +53,7 @@ const styles = StyleSheet.create ({
         fontSize:20,
     },
     textPerfil:{
+        marginLeft: 3,
         padding: 7,
         fontSize: 22,
         color: 'white',

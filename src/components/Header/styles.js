@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
         width:80,
         marginLeft:40,
         borderRadius: 15
-      }
+      },
+    image: {
+         width: 30, 
+         height: 30 
+    }
 });
 export default styles;

@@ -3,9 +3,9 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
-        height: '85%',
+        height: '98%',
         margin: 5,
-        marginTop: 10,
+        marginTop: 6,
         borderRadius: 9,
         backgroundColor: "#242528",
         display: 'flex',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 2,
         height: 80,
-        width: 370,
+        width: 350,
     },
     areaImagemProduto: {
         flex: 0.2,
