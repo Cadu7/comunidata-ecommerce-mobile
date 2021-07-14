@@ -25,24 +25,26 @@ const Carrinho = ({ navigation }) => {
           )
         }}
       />
-      <TouchableOpacity style={styles.buttonCheckout} onPress={() => {
-        if(isLogged) {
-          navigation.navigate('Checkout');
-        } else {
-          Alert.alert(
-            'Usuário não cadastrado!!!',
-            'Por favor se cadastrar',
-            [
-              {
-                text: 'Cadastrar',
-                onPress: () => navigation.navigate('Perfil')
-              }
-            ]
-          )
-        }
-      }}>
-        <Text style={styles.titleCheckout}>Checkout</Text>
-      </TouchableOpacity >
+      <View style={styles.checkoutContainer}>
+        <TouchableOpacity style={styles.buttonCheckout} onPress={() => {
+          if (isLogged) {
+            navigation.navigate('Checkout');
+          } else {
+            Alert.alert(
+              'Usuário não cadastrado!!!',
+              'Por favor se cadastrar',
+              [
+                {
+                  text: 'Cadastrar',
+                  onPress: () => navigation.navigate('Perfil')
+                }
+              ]
+            )
+          }
+        }}>
+          <Text style={styles.titleCheckout}>Checkout</Text>
+        </TouchableOpacity >
+      </View>
     </SafeAreaView>
   );
 };
