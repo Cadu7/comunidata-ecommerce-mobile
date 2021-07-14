@@ -19,7 +19,7 @@ const TabNavigator = ({ navigation }) => {
                 inactiveBackgroundColor: '#1E4B75'
             }}
         >
-            {/* <Tab.Screen
+            <Tab.Screen
                 name='Desafios'
                 component={DrawerCarrinho}
                 listeners={({ navigation }) => ({
@@ -27,7 +27,8 @@ const TabNavigator = ({ navigation }) => {
                         e.preventDefault();
                         navigation.openDrawer();
                     }
-                })} /> */}
+                })} />
+                
             <Tab.Screen name='Carrinho' component={Carrinho} />
             <Tab.Screen name='Home' component={Home} />
             <Tab.Screen name='Perfil' component={Perfil} />

@@ -64,7 +64,7 @@ const Home = ({ navigation }) => {
                           <Text style={styles.textoCard}>{produto.nome}</Text>
                           <Text style={styles.textoCard}>R$ {produto.valorUnitario}</Text>
                           <ImageBackground
-                            realizeMode='center'
+                            resizeMode='center'
                             source={{ uri: produto.url }}
                             style={styles.imageProduto}
                           />

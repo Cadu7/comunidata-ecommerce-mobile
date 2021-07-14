@@ -1,10 +1,11 @@
 
 import React from 'react';
 import Header from './components/Header';
-import DrawerCarrinho from './components/DrawerCarrinho';
+import RootStack from './components/RootStack';
 import { ClienteProvider } from './Context/ClienteContext';
-import  CarrinhoProvider  from './Context/CarrinhoContext/CarrinhoProvider';
 import { NavigationContainer } from '@react-navigation/native';
+import  CarrinhoProvider  from './Context/CarrinhoContext/CarrinhoProvider';
+import DrawerCarrinho from './components/DrawerCarrinho';
 
 
 const App = () => {
